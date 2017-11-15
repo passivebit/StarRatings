@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vtY-ve-Dae">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Table With Star Controller-->
+        <scene sceneID="ou5-4a-iFZ">
+            <objects>
+                <viewController id="vtY-ve-Dae" customClass="TableWithStarController" customModule="ExpandableLabel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="me4-NS-PTK"/>
+                        <viewControllerLayoutGuide type="bottom" id="qMU-Cd-z7H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yPJ-TF-Dlo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iFX-ts-Bsi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StarCell" id="VpJ-XZ-Svh" customClass="StarCell" customModule="ExpandableLabel" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VpJ-XZ-Svh" id="Ota-Lc-vOf">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sample text" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K34-yl-L38">
+                                                    <rect key="frame" x="17" y="11" width="88.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ca-CU-qBo" customClass="StarRatingView" customModule="ExpandableLabel" customModuleProvider="target">
+                                                    <rect key="frame" x="217" y="6.5" width="150" height="30"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="CDl-nU-oPN"/>
+                                                        <constraint firstAttribute="height" constant="30" id="fbv-iv-VPK"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="0ca-CU-qBo" secondAttribute="trailing" id="JKn-VR-ddT"/>
+                                                <constraint firstItem="0ca-CU-qBo" firstAttribute="centerY" secondItem="K34-yl-L38" secondAttribute="centerY" id="KBw-M8-e0h"/>
+                                                <constraint firstItem="K34-yl-L38" firstAttribute="top" secondItem="Ota-Lc-vOf" secondAttribute="topMargin" constant="3" id="QSO-cJ-Abh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="K34-yl-L38" secondAttribute="bottom" constant="3" id="eu9-Vx-2Ij"/>
+                                                <constraint firstItem="K34-yl-L38" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="0ca-CU-qBo" secondAttribute="leading" constant="-10" id="fdj-km-KV0"/>
+                                                <constraint firstItem="K34-yl-L38" firstAttribute="leading" secondItem="Ota-Lc-vOf" secondAttribute="leadingMargin" constant="9" id="jcg-gb-rR1"/>
+                                                <constraint firstItem="K34-yl-L38" firstAttribute="centerY" secondItem="Ota-Lc-vOf" secondAttribute="centerY" id="y8w-8j-M1V"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="starRatingView" destination="0ca-CU-qBo" id="BCN-uJ-HEK"/>
+                                            <outlet property="ttLabel" destination="K34-yl-L38" id="RQ0-e3-AbN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vtY-ve-Dae" id="Jl5-3e-nTO"/>
+                                    <outlet property="delegate" destination="vtY-ve-Dae" id="iXt-iT-IXI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iFX-ts-Bsi" firstAttribute="leading" secondItem="yPJ-TF-Dlo" secondAttribute="leading" id="31E-ea-vVr"/>
+                            <constraint firstItem="iFX-ts-Bsi" firstAttribute="top" secondItem="yPJ-TF-Dlo" secondAttribute="top" id="fIU-sI-Lys"/>
+                            <constraint firstAttribute="trailing" secondItem="iFX-ts-Bsi" secondAttribute="trailing" id="qz0-Pg-LjG"/>
+                            <constraint firstItem="iFX-ts-Bsi" firstAttribute="bottom" secondItem="qMU-Cd-z7H" secondAttribute="top" id="zd5-Zm-rFp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e8B-af-774"/>
+                    </view>
+                    <connections>
+                        <outlet property="myTableView" destination="iFX-ts-Bsi" id="35I-8z-F1d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="peg-ta-He5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="111" y="83"/>
+        </scene>
+    </scenes>
+</document>
